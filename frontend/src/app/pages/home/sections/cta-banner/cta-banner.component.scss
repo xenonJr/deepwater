@@ -1,0 +1,69 @@
+$navy: #1a2744;
+$gold: #C9963B;
+
+.cta {
+  background: $navy;
+  padding: 64px 24px;
+
+  &__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  &__heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 8px;
+  }
+
+  &__sub {
+    font-size: 16px;
+    color: rgba(#fff, 0.7);
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: 4px;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+
+  &--gold {
+    background: $gold;
+    color: #fff;
+    border: 2px solid $gold;
+    &:hover { background: darken($gold, 8%); }
+  }
+
+  &--outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(#fff, 0.5);
+    &:hover { border-color: #fff; }
+  }
+}

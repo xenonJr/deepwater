@@ -1,0 +1,28 @@
+<section class="triple">
+  <div class="triple__inner">
+
+    <!-- Latest Sermon -->
+    <div class="triple__col triple__col--sermon" dwReveal>
+      <p class="triple__label">Latest Sermon</p>
+      <dw-sermon-card [sermon]="featuredSermon" [featured]="true"></dw-sermon-card>
+    </div>
+
+    <!-- Upcoming Events -->
+    <div class="triple__col" dwReveal [dwRevealDelay]="100">
+      <p class="triple__label">Upcoming Events</p>
+      <dw-event-card *ngFor="let event of upcomingEvents" [event]="event"></dw-event-card>
+      <a routerLink="/events" class="triple__view-all">View All Events &rarr;</a>
+    </div>
+
+    <!-- Ministries -->
+    <div class="triple__col" dwReveal [dwRevealDelay]="200">
+      <p class="triple__label">Our Ministries</p>
+      <h3 class="triple__ministries-heading">Get Connected</h3>
+      <div class="triple__ministries-grid">
+        <dw-ministry-card *ngFor="let m of ministries.slice(0,8)" [ministry]="m" [compact]="true"></dw-ministry-card>
+      </div>
+      <a routerLink="/ministries" class="triple__view-all">View All Ministries &rarr;</a>
+    </div>
+
+  </div>
+</section>

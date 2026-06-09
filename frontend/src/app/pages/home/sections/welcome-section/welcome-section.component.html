@@ -1,0 +1,27 @@
+<section class="welcome">
+  <div class="welcome__inner">
+    <div class="welcome__text" dwReveal>
+      <dw-section-label text="You're Welcome Here"></dw-section-label>
+      <h2 class="welcome__heading">A Place to Belong,<br>Grow &amp; Encounter Jesus</h2>
+      <p class="welcome__body">
+        At Deep Waters Church, we believe church should be a place where people are welcomed warmly,
+        taught faithfully, encouraged deeply, and pointed clearly to Jesus Christ.
+      </p>
+      <p class="welcome__body">
+        Our services include meaningful worship, Christ-centred Bible teaching, prayer, fellowship,
+        and genuine Christian community.
+      </p>
+      <a routerLink="/plan-your-visit" class="welcome__cta">
+        Plan Your Visit
+        <lucide-icon name="arrow-right" [size]="16"></lucide-icon>
+      </a>
+    </div>
+    <div class="welcome__image" dwReveal [dwRevealDelay]="150">
+      <img
+        src="assets/images/welcome-community.png"
+        alt="People connecting at Deep Waters Church"
+        loading="lazy"
+        onerror="this.style.display='none'; this.parentElement.classList.add('welcome__image--placeholder')">
+    </div>
+  </div>
+</section>

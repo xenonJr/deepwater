@@ -1,0 +1,53 @@
+<header class="header" [class.header--scrolled]="scrolled">
+  <div class="header__inner">
+
+    <a routerLink="/" class="header__logo" (click)="closeMobile()">
+      <div class="header__logo-mark">
+        <lucide-icon name="church" [size]="22" [strokeWidth]="1.5" class="header__logo-icon"></lucide-icon>
+      </div>
+      <div class="header__logo-text">
+        <span class="header__logo-name">DEEP WATERS</span>
+        <span class="header__logo-sub">CHURCH</span>
+      </div>
+    </a>
+
+    <nav class="header__nav" aria-label="Main navigation">
+      <a *ngFor="let item of navItems"
+         [routerLink]="item.route"
+         routerLinkActive="header__nav-link--active"
+         [routerLinkActiveOptions]="{exact: item.route === '/'}"
+         class="header__nav-link">
+        {{ item.label }}
+      </a>
+    </nav>
+
+    <button class="header__burger"
+            (click)="toggleMobile()"
+            [attr.aria-expanded]="mobileOpen"
+            aria-label="Toggle navigation">
+      <lucide-icon [name]="mobileOpen ? 'x' : 'menu'" [size]="24" [strokeWidth]="1.8"></lucide-icon>
+    </button>
+  </div>
+
+  <div class="header__mobile" [class.header__mobile--open]="mobileOpen" role="dialog">
+    <nav>
+      <a *ngFor="let item of navItems"
+         [routerLink]="item.route"
+         class="header__mobile-link"
+         (click)="closeMobile()">
+        {{ item.label }}
+      </a>
+    </nav>
+    <div class="header__mobile-ctas">
+      <a routerLink="/plan-your-visit" class="btn btn--gold" (click)="closeMobile()">
+        <lucide-icon name="calendar" [size]="16"></lucide-icon>
+        Plan Your Visit
+      </a>
+      <a routerLink="/sermons" class="btn btn--outline" (click)="closeMobile()">
+        <lucide-icon name="play" [size]="16"></lucide-icon>
+        Watch Online
+      </a>
+    </div>
+  </div>
+  <div class="header__mobile-overlay" *ngIf="mobileOpen" (click)="closeMobile()" aria-hidden="true"></div>
+</header>

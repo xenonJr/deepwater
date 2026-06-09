@@ -1,0 +1,93 @@
+$navy: #1a2744;
+$gold: #C9963B;
+
+.welcome {
+  padding: 72px 24px;
+  background: #fff;
+
+  &__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  &__heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    color: $navy;
+    line-height: 1.25;
+    margin: 0 0 24px;
+  }
+
+  &__body {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin: 0 0 20px;
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: $navy;
+    border: 2px solid $navy;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: all 0.2s;
+    margin-top: 8px;
+
+    &:hover {
+      background: transparent;
+      color: $navy;
+    }
+  }
+
+  &__image {
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, #e8edf5, #d0d9ec);
+
+    @media (max-width: 768px) {
+      max-height: 300px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::after {
+        content: 'You belong here';
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 24px;
+        color: $navy;
+        opacity: 0.4;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<div class="info-bar">
+  <div class="info-bar__inner">
+    <div class="info-bar__item" *ngFor="let item of items">
+      <lucide-icon [name]="item.icon" [size]="36" class="info-bar__icon"></lucide-icon>
+      <div>
+        <p class="info-bar__title">{{ item.title }}</p>
+        <p class="info-bar__subtitle">{{ item.subtitle }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<footer class="footer">
+  <div class="footer__main">
+    <div class="footer__grid">
+
+      <!-- Brand -->
+      <div class="footer__brand">
+        <a routerLink="/" class="footer__logo">
+          <span class="footer__logo-name">DEEP WATERS</span>
+          <span class="footer__logo-sub">CHURCH</span>
+        </a>
+        <p class="footer__tagline">A warm, Spirit-filled, Christ-centred church community where all are welcome.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook" class="footer__social-link">
+            <lucide-icon name="facebook" [size]="18" [strokeWidth]="1.5"></lucide-icon>
+          </a>
+          <a href="#" aria-label="Instagram" class="footer__social-link">
+            <lucide-icon name="instagram" [size]="18" [strokeWidth]="1.5"></lucide-icon>
+          </a>
+          <a href="#" aria-label="YouTube" class="footer__social-link">
+            <lucide-icon name="youtube" [size]="18" [strokeWidth]="1.5"></lucide-icon>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer__col">
+        <h4 class="footer__col-heading">Quick Links</h4>
+        <ul class="footer__links">
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/about">About Us</a></li>
+          <li><a routerLink="/plan-your-visit">What to Expect</a></li>
+          <li><a routerLink="/service-times">Service Times & Location</a></li>
+          <li><a routerLink="/what-we-believe">What We Believe</a></li>
+          <li><a routerLink="/ministries">Ministries</a></li>
+          <li><a routerLink="/give">Giving</a></li>
+          <li><a routerLink="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Service Times & Contact -->
+      <div class="footer__col">
+        <h4 class="footer__col-heading">Service Times & Contact</h4>
+        <ul class="footer__contact">
+          <li>
+            <lucide-icon name="clock" [size]="15" [strokeWidth]="1.5" class="footer__contact-icon"></lucide-icon>
+            <span>Sundays 10:00am<br>Everyone Welcome</span>
+          </li>
+          <li>
+            <lucide-icon name="map-pin" [size]="15" [strokeWidth]="1.5" class="footer__contact-icon"></lucide-icon>
+            <span>121 Orchard Road<br>Doreen VIC 3754</span>
+          </li>
+          <li>
+            <lucide-icon name="mail" [size]="15" [strokeWidth]="1.5" class="footer__contact-icon"></lucide-icon>
+            <a href="mailto:admin.deepwaters@gmail.com">admin.deepwaters&#64;gmail.com</a>
+          </li>
+          <li>
+            <lucide-icon name="phone" [size]="15" [strokeWidth]="1.5" class="footer__contact-icon"></lucide-icon>
+            <a href="tel:0397124411">(03) 9712 4411</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div class="footer__col">
+        <h4 class="footer__col-heading">Resources</h4>
+        <ul class="footer__links">
+          <li><a routerLink="/sermons">Sermons / Messages</a></li>
+          <li><a routerLink="/blog">Bible Study</a></li>
+          <li><a routerLink="/prayer-request">Prayer Request</a></li>
+          <li><a routerLink="/child-safety">Child Safety</a></li>
+          <li><a routerLink="/privacy">Privacy Policy</a></li>
+          <li><a routerLink="/terms">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Affiliated With -->
+      <div class="footer__col">
+        <h4 class="footer__col-heading">Affiliated With</h4>
+        <div class="footer__affiliation">
+          <img
+            src="assets/images/augospel.png"
+            alt="Australian Full Gospel Churches"
+            class="footer__affiliation-logo">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p>&copy; {{ currentYear }} Deep Waters Church Incorporated. All Rights Reserved.</p>
+    <p class="footer__credit">Website by TPX Digital</p>
+  </div>
+</footer>

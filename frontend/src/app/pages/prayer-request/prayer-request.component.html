@@ -1,0 +1,59 @@
+<dw-page-hero
+  title="Prayer Request"
+  subtitle="We believe in the power of prayer. Share your request with our team."
+  label="We're Praying">
+</dw-page-hero>
+
+<section class="prayer">
+  <div class="prayer__inner">
+    <div class="prayer__intro">
+      <p class="prayer__verse">"Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God." — Philippians 4:6</p>
+      <p>Our prayer team prays over every request submitted. You can choose to keep your request confidential — only the prayer team will see it.</p>
+    </div>
+
+    <form class="prayer__form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-group">
+        <label for="name">Your Name *</label>
+        <input id="name" type="text" formControlName="name" placeholder="Jane Smith">
+        <span class="form-error" *ngIf="f['name'].touched && f['name'].invalid">Name is required.</span>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email (optional)</label>
+          <input id="email" type="email" formControlName="email" placeholder="jane@example.com">
+          <span class="form-error" *ngIf="f['email'].touched && f['email'].invalid">Enter a valid email.</span>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone (optional)</label>
+          <input id="phone" type="tel" formControlName="phone" placeholder="0400 000 000">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="requestText">Your Prayer Request *</label>
+        <textarea id="requestText" formControlName="requestText" rows="6" placeholder="Share what's on your heart..."></textarea>
+        <span class="form-error" *ngIf="f['requestText'].touched && f['requestText'].invalid">Please enter at least 10 characters.</span>
+      </div>
+
+      <div class="form-checkboxes">
+        <label class="form-check">
+          <input type="checkbox" formControlName="isConfidential">
+          <span>Keep this request confidential (prayer team only)</span>
+        </label>
+        <label class="form-check">
+          <input type="checkbox" formControlName="isSalvation">
+          <span>This is a salvation request</span>
+        </label>
+        <label class="form-check">
+          <input type="checkbox" formControlName="isPraise">
+          <span>This is a praise report</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn--gold" [disabled]="submitting">
+        {{ submitting ? 'Submitting...' : 'Submit Prayer Request 🙏' }}
+      </button>
+    </form>
+  </div>
+</section>

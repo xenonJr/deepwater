@@ -1,0 +1,117 @@
+$navy: #1a2744;
+$gold: #C9963B;
+$white: #ffffff;
+
+.footer {
+  background: $navy;
+  color: rgba($white, 0.7);
+  font-family: 'Lato', sans-serif;
+
+  &__main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 24px 40px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(4, 1fr);
+    gap: 40px;
+
+    @media (max-width: 1024px) { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 600px)  { grid-template-columns: 1fr; }
+  }
+
+  &__logo {
+    display: flex; flex-direction: column;
+    text-decoration: none; margin-bottom: 16px;
+  }
+
+  &__logo-name {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 16px; font-weight: 700; color: $white; letter-spacing: 2px;
+  }
+
+  &__logo-sub {
+    font-size: 10px; font-weight: 300; color: $gold;
+    letter-spacing: 4px; text-transform: uppercase; margin-top: 2px;
+  }
+
+  &__tagline {
+    font-size: 13px; line-height: 1.7;
+    color: rgba($white, 0.6); margin: 0 0 20px; max-width: 260px;
+  }
+
+  &__social { display: flex; gap: 10px; }
+
+  &__social-link {
+    display: flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 1px solid rgba($white, 0.2);
+    color: rgba($white, 0.7); text-decoration: none; transition: all 0.2s;
+
+    &:hover { border-color: $gold; color: $gold; }
+  }
+
+  &__col-heading {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: $gold; margin: 0 0 20px;
+  }
+
+  &__links {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 10px;
+
+    a {
+      font-size: 13px; color: rgba($white, 0.65);
+      text-decoration: none; transition: color 0.2s;
+      &:hover { color: $gold; }
+    }
+  }
+
+  &__contact {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 14px;
+
+    li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 13px; color: rgba($white, 0.65);
+    }
+
+    a { color: rgba($white, 0.65); text-decoration: none; &:hover { color: $gold; } }
+  }
+
+  &__contact-icon {
+    color: $gold; flex-shrink: 0; margin-top: 2px;
+  }
+
+  &__affiliation {
+    border: 1px solid rgba($white, 0.2); border-radius: 6px;
+    padding: 16px; text-align: center;
+  }
+
+  &__affiliation-logo {
+    display: block;
+    max-width: 140px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 10px;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+  }
+
+  &__affiliation-tag {
+    font-size: 11px; color: rgba($white, 0.5); margin: 0; line-height: 1.5; font-style: italic;
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba($white, 0.1);
+    max-width: 1280px; margin: 0 auto; padding: 20px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 8px;
+
+    p { font-size: 12px; color: rgba($white, 0.4); margin: 0; }
+  }
+
+  &__credit { color: rgba($white, 0.3); }
+}

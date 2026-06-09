@@ -1,0 +1,77 @@
+<dw-page-hero
+  title="Plan Your Visit"
+  subtitle="We'd love to welcome you this Sunday at 10:00am"
+  label="First Time?">
+</dw-page-hero>
+
+<section class="visit">
+  <div class="visit__inner">
+    <div class="visit__info">
+      <h2 class="visit__heading">What to Expect</h2>
+      <ul class="visit__list">
+        <li>🕙 <strong>Sundays at 10:00am</strong> — arrive a little early for coffee</li>
+        <li>📍 <strong>121 Orchard Road, Doreen VIC 3754</strong></li>
+        <li>👕 Come as you are — casual dress, no pressure</li>
+        <li>👶 Kids Ministry available for all children</li>
+        <li>🚗 Free onsite parking</li>
+        <li>☕ Stay for coffee and connection afterwards</li>
+      </ul>
+    </div>
+
+    <form class="visit__form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <h3 class="visit__form-heading">Let Us Know You're Coming</h3>
+
+      <div class="form-group">
+        <label for="name">Your Name *</label>
+        <input id="name" type="text" formControlName="name" placeholder="Jane Smith">
+        <span class="form-error" *ngIf="f['name'].touched && f['name'].invalid">Name is required.</span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input id="email" type="email" formControlName="email" placeholder="jane@example.com">
+        <span class="form-error" *ngIf="f['email'].touched && f['email'].invalid">Valid email is required.</span>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone (optional)</label>
+        <input id="phone" type="tel" formControlName="phone" placeholder="0400 000 000">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="visitorCount">Number of Visitors</label>
+          <input id="visitorCount" type="number" formControlName="visitorCount" min="1">
+        </div>
+        <div class="form-group">
+          <label for="preferredContact">Preferred Contact</label>
+          <select id="preferredContact" formControlName="preferredContact">
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group form-group--check">
+        <label>
+          <input type="checkbox" formControlName="hasChildren">
+          We're bringing children
+        </label>
+      </div>
+
+      <div class="form-group" *ngIf="f['hasChildren'].value">
+        <label for="childrenAges">Children's Ages</label>
+        <input id="childrenAges" type="text" formControlName="childrenAges" placeholder="e.g. 3, 6, 8">
+      </div>
+
+      <div class="form-group">
+        <label for="questions">Any Questions? (optional)</label>
+        <textarea id="questions" formControlName="questions" rows="3" placeholder="Feel free to ask us anything..."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn--gold" [disabled]="submitting">
+        {{ submitting ? 'Sending...' : "We Can't Wait to Meet You! →" }}
+      </button>
+    </form>
+  </div>
+</section>

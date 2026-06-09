@@ -1,0 +1,73 @@
+/* =============================================
+   DEEP WATERS CHURCH — Global Styles
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
+/* CSS Variables */
+:root {
+  --navy:        #1a2744;
+  --navy-dark:   #0f1729;
+  --gold:        #C9963B;
+  --gold-dark:   #a87b2f;
+  --white:       #ffffff;
+  --off-white:   #f8f9fb;
+  --text:        #333333;
+  --text-muted:  #666666;
+  --border:      #e5e7eb;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Offset content below fixed header */
+main {
+  padding-top: 72px;
+}
+
+/* Global heading styles */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+p { margin: 0 0 1em; }
+
+a {
+  color: inherit;
+  transition: color 0.2s;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Scrollbar (Webkit) */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--off-white); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}

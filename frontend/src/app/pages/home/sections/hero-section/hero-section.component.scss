@@ -1,0 +1,122 @@
+$navy: #1a2744;
+$gold: #C9963B;
+
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('/assets/hero-image.png') center/cover no-repeat;
+  overflow: hidden;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.04) 50%,
+      rgba($navy, 0.35) 100%
+    );
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    padding: 100px 24px 140px;
+
+    @media (max-width: 768px) {
+      padding: 60px 20px 120px;
+    }
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* "DEEP WATERS" — large Cinzel */
+  &__title {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: clamp(52px, 9vw, 88px);
+    font-weight: 700;
+    color: $navy;
+    margin: 0;
+    line-height: 1.0;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 12px rgba(255,255,255,0.4);
+  }
+
+  /* "— CHURCH —" with side rules */
+  &__divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 10px 0 24px;
+  }
+
+  &__divider-line {
+    flex: 1;
+    max-width: 80px;
+    height: 1.5px;
+    background: $navy;
+    opacity: 0.7;
+  }
+
+  &__divider-text {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: clamp(14px, 2.5vw, 20px);
+    font-weight: 400;
+    color: $navy;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  &__tagline {
+    font-family: 'Lato', sans-serif;
+    font-size: clamp(14px, 1.8vw, 17px);
+    color: $navy;
+    line-height: 1.85;
+    margin: 0 0 36px;
+    text-shadow: 0 1px 6px rgba(255,255,255,0.5);
+  }
+
+  &__ctas {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: 3px;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &--gold {
+    background: $gold;
+    color: #fff;
+    border: 2px solid $gold;
+    &:hover { background: darken($gold, 8%); border-color: darken($gold, 8%); }
+  }
+
+  &--dark {
+    background: $navy;
+    color: #fff;
+    border: 2px solid $navy;
+    &:hover { background: lighten($navy, 8%); }
+  }
+}

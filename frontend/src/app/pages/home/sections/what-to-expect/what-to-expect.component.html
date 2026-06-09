@@ -1,0 +1,20 @@
+<section class="expect">
+  <div class="expect__inner">
+    <div class="expect__heading-row">
+      <span class="expect__heading-line"></span>
+      <span class="expect__heading-text">What to Expect</span>
+      <span class="expect__heading-line"></span>
+    </div>
+    <div class="expect__grid">
+      <div
+        class="expect__card"
+        *ngFor="let item of items; let i = index"
+        dwReveal
+        [dwRevealDelay]="i * 100">
+        <lucide-icon [name]="item.icon" [size]="44" class="expect__icon"></lucide-icon>
+        <h3 class="expect__title">{{ item.title }}</h3>
+        <p class="expect__desc">{{ item.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
