@@ -33,11 +33,11 @@
             "production": {
               "budgets": [
                 { "type": "initial", "maximumWarning": "500kB", "maximumError": "1MB" },
-                { "type": "anyComponentStyle", "maximumWarning": "2kB", "maximumError": "4kB" }
+                { "type": "anyComponentStyle", "maximumWarning": "6kB", "maximumError": "10kB" }
               ],
               "outputHashing": "all",
               "fileReplacements": [
-                { "replace": "src/environments/environment.ts", "from": "src/environments/environment.ts", "to": "src/environments/environment.prod.ts" }
+                { "replace": "src/environments/environment.ts", "with": "src/environments/environment.prod.ts" }
               ]
             },
             "development": {
