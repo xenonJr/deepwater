@@ -22,6 +22,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/ministries/ministries.component').then(m => m.MinistriesComponent)
   },
   {
+    path: 'service-times',
+    loadComponent: () => import('./pages/service-times/service-times.component').then(m => m.ServiceTimesComponent)
+  },
+  {
     path: 'events',
     loadComponent: () => import('./pages/events/events.component').then(m => m.EventsComponent)
   },

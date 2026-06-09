@@ -34,6 +34,13 @@ $gold: #C9963B;
     margin: 0 auto;
   }
 
+  // Staggered entrance animations
+  &__title   { animation: heroFadeUp 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s  both; }
+  &__divider { animation: heroFadeUp 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.35s both; }
+  &__tagline { animation: heroFadeUp 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.55s both; }
+  &__ctas    { animation: heroFadeUp 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.75s both; }
+  &__overlay { animation: heroOverlay 1.4s ease 0s both; }
+
   /* "DEEP WATERS" — large Cinzel */
   &__title {
     font-family: 'Cinzel', Georgia, serif;
@@ -89,6 +96,22 @@ $gold: #C9963B;
     justify-content: center;
     flex-wrap: wrap;
   }
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroOverlay {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .btn {

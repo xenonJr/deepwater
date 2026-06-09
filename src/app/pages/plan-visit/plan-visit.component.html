@@ -1,76 +1,196 @@
 <dw-page-hero
   title="Plan Your Visit"
-  subtitle="We'd love to welcome you this Sunday at 10:00am"
-  label="First Time?">
+  subtitle="We'd love to welcome you this Sunday — here's everything you need to know"
+  label="First Time?"
+  bgImage="assets/images/visit-worship.jpg">
 </dw-page-hero>
 
-<section class="visit">
-  <div class="visit__inner">
-    <div class="visit__info">
-      <h2 class="visit__heading">What to Expect</h2>
-      <ul class="visit__list">
-        <li>🕙 <strong>Sundays at 10:00am</strong> — arrive a little early for coffee</li>
-        <li>📍 <strong>121 Orchard Road, Doreen VIC 3754</strong></li>
-        <li>👕 Come as you are — casual dress, no pressure</li>
-        <li>👶 Kids Ministry available for all children</li>
-        <li>🚗 Free onsite parking</li>
-        <li>☕ Stay for coffee and connection afterwards</li>
-      </ul>
+<!-- QUICK INFO BAR -->
+<section class="pv-quickbar">
+  <div class="pv-quickbar__inner">
+    <div class="pv-quickbar__item" *ngFor="let q of quickInfo" dwReveal [dwRevealDelay]="q.delay">
+      <lucide-icon [name]="q.icon" [size]="28" [strokeWidth]="1.5" class="pv-quickbar__icon"></lucide-icon>
+      <div>
+        <p class="pv-quickbar__label">{{ q.label }}</p>
+        <p class="pv-quickbar__value">{{ q.value }}</p>
+      </div>
     </div>
+  </div>
+</section>
 
-    <form class="visit__form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
-      <h3 class="visit__form-heading">Let Us Know You're Coming</h3>
-
-      <div class="form-group">
-        <label for="name">Your Name *</label>
-        <input id="name" type="text" formControlName="name" placeholder="Jane Smith">
-        <span class="form-error" *ngIf="f['name'].touched && f['name'].invalid">Name is required.</span>
+<!-- WHAT IS A SUNDAY LIKE -->
+<section class="pv-sunday">
+  <div class="pv-sunday__inner">
+    <div class="pv-sunday__header" dwReveal>
+      <dw-section-label text="What to Expect"></dw-section-label>
+      <h2 class="pv-sunday__heading">What Is a Sunday Service Like?</h2>
+      <p class="pv-sunday__sub">A typical Sunday at Deep Waters runs about 75–90 minutes. Here's a walk-through of what you can expect.</p>
+    </div>
+    <div class="pv-sunday__timeline">
+      <div class="pv-sunday__step" *ngFor="let s of timeline; let i = index" dwReveal [dwRevealDelay]="i * 80">
+        <div class="pv-sunday__step-time">{{ s.time }}</div>
+        <div class="pv-sunday__step-dot"></div>
+        <div class="pv-sunday__step-body">
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.desc }}</p>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="form-group">
-        <label for="email">Email Address *</label>
-        <input id="email" type="email" formControlName="email" placeholder="jane@example.com">
-        <span class="form-error" *ngIf="f['email'].touched && f['email'].invalid">Valid email is required.</span>
+<!-- WORSHIP + DRESS -->
+<section class="pv-split pv-split--light">
+  <div class="pv-split__inner">
+    <div class="pv-split__image" dwReveal>
+      <img src="assets/images/visit-worship.jpg" alt="Worship at Deep Waters Church">
+    </div>
+    <div class="pv-split__text" dwReveal [dwRevealDelay]="150">
+      <dw-section-label text="Worship & Style"></dw-section-label>
+      <h2>Spirit-Filled Worship &amp; Casual Dress</h2>
+      <p>Our worship is contemporary, Spirit-led and Christ-centred — a mix of modern worship songs and timeless hymns. Expect a warm, genuine atmosphere where people freely worship however feels natural to them.</p>
+      <div class="pv-split__badges">
+        <span class="pv-split__badge" *ngFor="let b of worshipBadges">
+          <lucide-icon name="check" [size]="14" [strokeWidth]="2.5"></lucide-icon>
+          {{ b }}
+        </span>
       </div>
-
-      <div class="form-group">
-        <label for="phone">Phone (optional)</label>
-        <input id="phone" type="tel" formControlName="phone" placeholder="0400 000 000">
+      <div class="pv-dress">
+        <lucide-icon name="shirt" [size]="22" [strokeWidth]="1.5" class="pv-dress__icon"></lucide-icon>
+        <div>
+          <strong>What should I wear?</strong>
+          <p>Come as you are — seriously. Jeans, shorts, smart casual — whatever you're comfortable in. There is absolutely no dress code at Deep Waters.</p>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
 
+<!-- KIDS MINISTRY -->
+<section class="pv-split">
+  <div class="pv-split__inner pv-split__inner--reverse">
+    <div class="pv-split__text" dwReveal>
+      <dw-section-label text="Children's Ministry"></dw-section-label>
+      <h2>A Safe Place for Your Kids</h2>
+      <p>We believe kids should love church! Our Children's Ministry runs every Sunday during the service for children from birth through to Year 6.</p>
+      <ul class="pv-kids__list">
+        <li *ngFor="let k of kidsPoints">
+          <lucide-icon name="check" [size]="15" [strokeWidth]="2.5" class="pv-kids__check"></lucide-icon>
+          {{ k }}
+        </li>
+      </ul>
+      <p class="pv-kids__note">Children check in at the Kids desk at the entrance when you arrive. Our team will walk you through the process on your first visit.</p>
+    </div>
+    <div class="pv-split__image" dwReveal [dwRevealDelay]="150">
+      <img src="assets/images/visit-kids.jpg" alt="Children's Ministry at Deep Waters">
+    </div>
+  </div>
+</section>
+
+<!-- COFFEE & CONNECTION -->
+<section class="pv-split pv-split--light">
+  <div class="pv-split__inner">
+    <div class="pv-split__image" dwReveal>
+      <img src="assets/images/visit-coffee.jpg" alt="Coffee and connection at Deep Waters">
+    </div>
+    <div class="pv-split__text" dwReveal [dwRevealDelay]="150">
+      <dw-section-label text="After the Service"></dw-section-label>
+      <h2>Coffee &amp; Connection</h2>
+      <p>After every service we gather for coffee, tea and a chat. This is one of our favourite parts of Sunday — a chance to meet people, ask questions, and simply enjoy community.</p>
+      <p>Our welcome team will be looking out for first-time visitors. We'd love to say hello, answer any questions, and make sure you feel genuinely at home.</p>
+      <div class="pv-communion">
+        <h4>What About Communion?</h4>
+        <p>We celebrate Communion (the Lord's Supper) regularly as a church family. It is open to all who have put their faith in Jesus Christ. Elements are passed around and we take it together as a community. First-timers are always welcome to observe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARKING INFO -->
+<section class="pv-parking">
+  <div class="pv-parking__inner" dwReveal>
+    <div class="pv-parking__icon-wrap">
+      <lucide-icon name="car" [size]="40" [strokeWidth]="1.3" class="pv-parking__icon"></lucide-icon>
+    </div>
+    <div class="pv-parking__text">
+      <h2>Parking &amp; Getting Here</h2>
+      <p>We have <strong>free onsite parking</strong> available right at the venue. Additional street parking is also available nearby. We're located at <strong>121 Orchard Road, Doreen VIC 3754</strong> — easy to find with GPS.</p>
+    </div>
+    <a href="https://maps.google.com/?q=121+Orchard+Road+Doreen+VIC+3754" target="_blank" rel="noopener noreferrer" class="pv-parking__link">
+      <lucide-icon name="map-pin" [size]="16"></lucide-icon>
+      Get Directions
+    </a>
+  </div>
+</section>
+
+<!-- FAQ ACCORDION -->
+<section class="pv-faq">
+  <div class="pv-faq__inner">
+    <div class="pv-faq__header" dwReveal>
+      <dw-section-label text="Common Questions"></dw-section-label>
+      <h2 class="pv-faq__heading">We've Got Answers</h2>
+    </div>
+    <div class="pv-faq__list" dwReveal [dwRevealDelay]="100">
+      <div class="pv-faq__item" *ngFor="let faq of faqs; let i = index" [class.pv-faq__item--open]="openFaq === i">
+        <button class="pv-faq__question" (click)="toggleFaq(i)" [attr.aria-expanded]="openFaq === i">
+          <span>{{ faq.q }}</span>
+          <lucide-icon [name]="openFaq === i ? 'chevron-up' : 'chevron-down'" [size]="18" [strokeWidth]="2"></lucide-icon>
+        </button>
+        <div class="pv-faq__answer" [class.pv-faq__answer--visible]="openFaq === i">
+          <p>{{ faq.a }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="pv-form-section">
+  <div class="pv-form-section__inner">
+    <div class="pv-form-section__intro" dwReveal>
+      <dw-section-label text="We'd Love to Know"></dw-section-label>
+      <h2>Let Us Know You're Coming</h2>
+      <p>Fill in the form and our welcome team will make sure you're looked after on Sunday. No obligation — just a helpful heads-up so we can say a proper hello.</p>
+    </div>
+    <form class="visit__form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate dwReveal [dwRevealDelay]="150">
       <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your Name *</label>
+          <input id="name" type="text" formControlName="name" placeholder="Jane Smith">
+          <span class="form-error" *ngIf="f['name'].touched && f['name'].invalid">Name is required.</span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input id="email" type="email" formControlName="email" placeholder="jane@example.com">
+          <span class="form-error" *ngIf="f['email'].touched && f['email'].invalid">Valid email is required.</span>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone (optional)</label>
+          <input id="phone" type="tel" formControlName="phone" placeholder="0400 000 000">
+        </div>
         <div class="form-group">
           <label for="visitorCount">Number of Visitors</label>
           <input id="visitorCount" type="number" formControlName="visitorCount" min="1">
         </div>
-        <div class="form-group">
-          <label for="preferredContact">Preferred Contact</label>
-          <select id="preferredContact" formControlName="preferredContact">
-            <option value="email">Email</option>
-            <option value="phone">Phone</option>
-          </select>
-        </div>
       </div>
-
       <div class="form-group form-group--check">
         <label>
           <input type="checkbox" formControlName="hasChildren">
           We're bringing children
         </label>
       </div>
-
       <div class="form-group" *ngIf="f['hasChildren'].value">
         <label for="childrenAges">Children's Ages</label>
         <input id="childrenAges" type="text" formControlName="childrenAges" placeholder="e.g. 3, 6, 8">
       </div>
-
       <div class="form-group">
         <label for="questions">Any Questions? (optional)</label>
         <textarea id="questions" formControlName="questions" rows="3" placeholder="Feel free to ask us anything..."></textarea>
       </div>
-
       <button type="submit" class="btn btn--gold" [disabled]="submitting">
-        {{ submitting ? 'Sending...' : "We Can't Wait to Meet You! →" }}
+        {{ submitting ? 'Sending...' : "We Can't Wait to Meet You →" }}
       </button>
     </form>
   </div>

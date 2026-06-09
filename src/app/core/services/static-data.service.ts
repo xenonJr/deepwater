@@ -90,14 +90,15 @@ export class StaticDataService {
   ];
 
   readonly ministries: Ministry[] = [
-    { id: 1, name: 'Prayer Ministry',     description: 'Interceding for our church, community and nation.',        iconName: 'hands-praying', displayOrder: 1 },
-    { id: 2, name: 'Kids Ministry',       description: 'Fun, safe and age-appropriate programs for children.',      iconName: 'baby',          displayOrder: 2 },
-    { id: 3, name: 'Youth & Young Adults',description: 'Building the next generation in faith.',                    iconName: 'users',         displayOrder: 3 },
-    { id: 4, name: "Men's Ministry",      description: "Iron sharpening iron — growing together as men of God.",   iconName: 'user',          displayOrder: 4 },
-    { id: 5, name: "Women's Ministry",    description: 'Encouraging and equipping women in faith and life.',        iconName: 'heart',         displayOrder: 5 },
-    { id: 6, name: 'Home Groups',         description: 'Connecting in smaller groups throughout the week.',         iconName: 'home',          displayOrder: 6 },
-    { id: 7, name: 'Worship Team',        description: 'Leading the church in Spirit-filled worship.',              iconName: 'music',         displayOrder: 7 },
-    { id: 8, name: 'Outreach Ministry',   description: 'Sharing the love of Jesus in our local community.',         iconName: 'globe',         displayOrder: 8 }
+    { id: 1, name: 'Prayer Ministry',      description: 'Interceding for our church, community and nation. We believe prayer moves mountains.',                              iconName: 'hands-praying', displayOrder: 1 },
+    { id: 2, name: "Men's Ministry",       description: "Iron sharpening iron. A space for men to grow in faith, accountability, and godly character.",                     iconName: 'user',          displayOrder: 2 },
+    { id: 3, name: "Women's Ministry",     description: 'Encouraging and equipping women to walk boldly in their God-given identity and calling.',                           iconName: 'heart',         displayOrder: 3 },
+    { id: 4, name: 'Young Adults',         description: 'A community for 18–35s to encounter Jesus, build friendships, and pursue purpose together.',                       iconName: 'users',         displayOrder: 4 },
+    { id: 5, name: 'Home Groups',          description: 'Smaller circles of community meeting mid-week for life, laughter and growing in the Word together.',               iconName: 'home',          displayOrder: 5 },
+    { id: 6, name: 'Worship Team',         description: 'Leading the church in Spirit-filled, Christ-exalting worship every Sunday and at special events.',                 iconName: 'music',         displayOrder: 6 },
+    { id: 7, name: "Children's Ministry",  description: 'Safe, fun and age-appropriate programs helping kids encounter Jesus and grow in faith.',                            iconName: 'baby',          displayOrder: 7 },
+    { id: 8, name: 'Outreach Ministry',    description: 'Taking the love of Jesus beyond our walls — serving the local community and sharing the Gospel.',                  iconName: 'globe',         displayOrder: 8 },
+    { id: 9, name: 'Pastoral Care',        description: 'Walking alongside people through every season of life — offering prayer, support and Christ-centred counselling.', iconName: 'cross',         displayOrder: 9 }
   ];
 
   getFeaturedSermon(): Sermon {

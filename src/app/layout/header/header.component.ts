@@ -21,7 +21,6 @@ export class HeaderComponent {
     { label: 'About Us',               route: '/about' },
     { label: 'What to Expect',         route: '/plan-your-visit' },
     { label: 'Service Times & Location', route: '/service-times' },
-    { label: 'What We Believe',        route: '/what-we-believe' },
     { label: 'Ministries',             route: '/ministries' },
     { label: 'Contact Us',             route: '/contact' }
   ];

@@ -1,0 +1,79 @@
+<dw-page-hero
+  title="Our Ministries"
+  subtitle="Every person has a place to belong and a way to serve — find yours"
+  label="Get Involved"
+  bgImage="assets/images/ministry-community.jpg">
+</dw-page-hero>
+
+<!-- INTRO -->
+<section class="min-intro">
+  <div class="min-intro__inner" dwReveal>
+    <dw-section-label text="Together We Grow"></dw-section-label>
+    <h2 class="min-intro__heading">A Community Built on Belonging</h2>
+    <p class="min-intro__body">At Deep Waters Church, ministry isn't just for a few — it's for everyone. Whether you're looking to connect with others who share your life stage, grow deeper in faith, or give back to the community, there is a place for you here. Explore our ministries and find where you fit.</p>
+  </div>
+</section>
+
+<!-- MINISTRY CARDS GRID -->
+<section class="min-grid-section">
+  <div class="min-grid-section__inner">
+    <div class="min-card" *ngFor="let m of ministries; let i = index" dwReveal [dwRevealDelay]="(i % 3) * 100">
+      <div class="min-card__icon-wrap">
+        <lucide-icon [name]="iconMap[m.iconName] || 'users'" [size]="36" [strokeWidth]="1.4" class="min-card__icon"></lucide-icon>
+      </div>
+      <h3 class="min-card__name">{{ m.name }}</h3>
+      <p class="min-card__desc">{{ m.description }}</p>
+      <a class="min-card__link" (click)="scrollToConnect()">
+        Get Involved
+        <lucide-icon name="arrow-right" [size]="14" [strokeWidth]="2"></lucide-icon>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTED FEATURE — HOME GROUPS -->
+<section class="min-feature">
+  <div class="min-feature__inner">
+    <div class="min-feature__image" dwReveal>
+      <img src="assets/images/ministry-community.jpg" alt="Home Groups at Deep Waters">
+    </div>
+    <div class="min-feature__text" dwReveal [dwRevealDelay]="150">
+      <dw-section-label text="Life Together"></dw-section-label>
+      <h2>Smaller Groups, Deeper Community</h2>
+      <p>Home Groups are at the heart of how we do life together. Meeting mid-week in homes around the Doreen area, these smaller circles are where real friendships are built, questions are asked freely, and faith grows through everyday life.</p>
+      <p>Groups are open to all — whether you're new to faith or have walked with Jesus for years. Simply reach out and we'll connect you with a group near you.</p>
+      <a class="min-feature__btn" (click)="scrollToConnect()">Find a Home Group</a>
+    </div>
+  </div>
+</section>
+
+<!-- OUTREACH FEATURE -->
+<section class="min-outreach">
+  <div class="min-outreach__inner">
+    <div class="min-outreach__text" dwReveal>
+      <dw-section-label text="Beyond Our Walls"></dw-section-label>
+      <h2>Serving Our Community</h2>
+      <p>Our Outreach Ministry takes the love of Jesus into the streets, homes and hearts of Doreen and surrounds. We partner with local initiatives, serve the vulnerable, and share hope with those who need it most.</p>
+      <p>If you have a heart for your community and want to make a real difference, Outreach is the place to start.</p>
+    </div>
+    <div class="min-outreach__image" dwReveal [dwRevealDelay]="150">
+      <img src="assets/images/ministry-prayer.jpg" alt="Outreach Ministry at Deep Waters">
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONNECT -->
+<section class="min-cta" id="min-connect">
+  <div class="min-cta__inner" dwReveal>
+    <dw-section-label text="Ready to Step In?"></dw-section-label>
+    <h2 class="min-cta__heading">Find Your Place</h2>
+    <p class="min-cta__body">Not sure which ministry is right for you? That's okay. Reach out to us and we'll help you find your fit — no pressure, just a conversation.</p>
+    <div class="min-cta__actions">
+      <a routerLink="/plan-your-visit" class="min-cta__btn min-cta__btn--gold">Plan Your Visit</a>
+      <a href="mailto:hello@deepwaterschurch.com.au" class="min-cta__btn min-cta__btn--outline">
+        <lucide-icon name="mail" [size]="16" [strokeWidth]="2"></lucide-icon>
+        Email Us
+      </a>
+    </div>
+  </div>
+</section>

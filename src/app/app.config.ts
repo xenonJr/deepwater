@@ -3,8 +3,10 @@ import { provideRouter, withViewTransitions } from '@angular/router';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import {
   LucideAngularModule, Clock, MapPin, Users, Coffee, Music, Baby, Shirt, Car,
-  Timer, Hand, Heart, Home, Globe, User, Calendar, Play, Facebook, Instagram,
-  Youtube, Phone, Mail, Church, Check, ArrowRight, ChevronDown, Menu, X
+  Timer, Hand, Heart, House, Globe, User, Calendar, Play, Facebook, Instagram,
+  Youtube, Phone, Mail, Church, Check, ArrowRight, ChevronDown, ChevronUp, Menu, X,
+  BookOpen, Wind, Triangle, Cross, Droplets, Flame, Star, Shield, Handshake,
+  Headphones, FileText, Download, ExternalLink, Volume2, Sun
 } from 'lucide-angular';
 import { routes } from './app.routes';
 
@@ -16,9 +18,11 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(
       LucideAngularModule.pick({
         Clock, MapPin, Users, Coffee, Music, Baby, Shirt, Car, Timer,
-        Hand, Heart, Home, Globe, User, Calendar, Play,
+        Hand, Heart, House, Globe, User, Calendar, Play,
         Facebook, Instagram, Youtube, Phone, Mail, Church, Check,
-        ArrowRight, ChevronDown, Menu, X
+        ArrowRight, ChevronDown, ChevronUp, Menu, X,
+        BookOpen, Wind, Triangle, Cross, Droplets, Flame, Star, Shield, Handshake,
+        Headphones, FileText, Download, ExternalLink, Volume2, Sun
       })
     )
   ]

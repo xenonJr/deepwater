@@ -64,7 +64,11 @@ $border: #dde3ed;
     }
 
     @media (max-width: 600px) {
+      // Reset the 3n rule from the 1024px breakpoint
+      &:nth-child(3n) { border-right: 1px solid $border; }
+      // Even items (right column) have no right border
       &:nth-child(2n) { border-right: none; }
+      // Rows 2 and 3 get a top border
       &:nth-child(n+3) { border-top: 1px solid $border; }
     }
   }

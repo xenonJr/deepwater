@@ -42,8 +42,9 @@ export class MinistryCardComponent {
     'users':         'users',
     'user':          'user',
     'heart':         'heart',
-    'home':          'home',
+    'home':          'house',
     'music':         'music',
-    'globe':         'globe'
+    'globe':         'globe',
+    'cross':         'cross'
   };
 }

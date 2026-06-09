@@ -1,0 +1,202 @@
+<dw-page-hero
+  title="Service Times & Location"
+  subtitle="Join us this Sunday — you are always welcome at Deep Waters Church"
+  label="Visit Us"
+  bgImage="assets/images/visit-worship.jpg">
+</dw-page-hero>
+
+<!-- SERVICE TIMES CARDS -->
+<section class="st-times">
+  <div class="st-times__inner">
+    <div class="st-times__header" dwReveal>
+      <dw-section-label text="Regular Gatherings"></dw-section-label>
+      <h2 class="st-times__heading">When We Meet</h2>
+    </div>
+    <div class="st-times__grid">
+      <div class="st-card st-card--featured" dwReveal [dwRevealDelay]="0">
+        <div class="st-card__icon-wrap">
+          <lucide-icon name="sun" [size]="32" [strokeWidth]="1.4" class="st-card__icon"></lucide-icon>
+        </div>
+        <div class="st-card__body">
+          <span class="st-card__day">Every Sunday</span>
+          <h3 class="st-card__name">Sunday Service</h3>
+          <p class="st-card__time">10:00am – 11:30am</p>
+          <p class="st-card__desc">Our main weekly gathering — worship, Bible teaching, prayer and community. All ages welcome. Children's Ministry runs concurrently for birth through Year 6.</p>
+          <div class="st-card__tags">
+            <span class="st-card__tag">All Ages</span>
+            <span class="st-card__tag">Kids Ministry</span>
+            <span class="st-card__tag">Coffee After</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="st-card" dwReveal [dwRevealDelay]="100">
+        <div class="st-card__icon-wrap">
+          <lucide-icon name="users" [size]="28" [strokeWidth]="1.4" class="st-card__icon"></lucide-icon>
+        </div>
+        <div class="st-card__body">
+          <span class="st-card__day">Mid-Week</span>
+          <h3 class="st-card__name">Home Groups</h3>
+          <p class="st-card__time">Various times</p>
+          <p class="st-card__desc">Smaller circles meeting in homes around the Doreen area. Real community, real conversations, and growing together in the Word.</p>
+          <div class="st-card__tags">
+            <span class="st-card__tag">Community</span>
+            <span class="st-card__tag">Bible Study</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="st-card" dwReveal [dwRevealDelay]="200">
+        <div class="st-card__icon-wrap">
+          <lucide-icon name="hand" [size]="28" [strokeWidth]="1.4" class="st-card__icon"></lucide-icon>
+        </div>
+        <div class="st-card__body">
+          <span class="st-card__day">Fortnightly</span>
+          <h3 class="st-card__name">Prayer Night</h3>
+          <p class="st-card__time">7:30pm – 9:00pm</p>
+          <p class="st-card__desc">An evening of intercession and worship together. We believe prayer moves mountains — come and seek God alongside your church family.</p>
+          <div class="st-card__tags">
+            <span class="st-card__tag">Prayer</span>
+            <span class="st-card__tag">Worship</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="st-card" dwReveal [dwRevealDelay]="300">
+        <div class="st-card__icon-wrap">
+          <lucide-icon name="book-open" [size]="28" [strokeWidth]="1.4" class="st-card__icon"></lucide-icon>
+        </div>
+        <div class="st-card__body">
+          <span class="st-card__day">Bi-Monthly</span>
+          <h3 class="st-card__name">Bible Study</h3>
+          <p class="st-card__time">7:00pm – 8:30pm</p>
+          <p class="st-card__desc">Deeper study of Scripture — exploring books of the Bible together with discussion and application for everyday life.</p>
+          <div class="st-card__tags">
+            <span class="st-card__tag">In-Depth</span>
+            <span class="st-card__tag">Discussion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="st-times__note" dwReveal>For exact dates of mid-week gatherings, check our <a routerLink="/events">Events page</a> or contact us directly.</p>
+  </div>
+</section>
+
+<!-- LOCATION + MAP -->
+<section class="st-location">
+  <div class="st-location__inner">
+    <div class="st-location__info" dwReveal>
+      <dw-section-label text="Find Us"></dw-section-label>
+      <h2 class="st-location__heading">We're in Doreen, VIC</h2>
+
+      <div class="st-detail">
+        <div class="st-detail__icon-wrap">
+          <lucide-icon name="map-pin" [size]="20" [strokeWidth]="1.6" class="st-detail__icon"></lucide-icon>
+        </div>
+        <div>
+          <p class="st-detail__label">Address</p>
+          <p class="st-detail__value">121 Orchard Road<br>Doreen VIC 3754<br>Australia</p>
+        </div>
+      </div>
+
+      <div class="st-detail">
+        <div class="st-detail__icon-wrap">
+          <lucide-icon name="clock" [size]="20" [strokeWidth]="1.6" class="st-detail__icon"></lucide-icon>
+        </div>
+        <div>
+          <p class="st-detail__label">Sunday Service</p>
+          <p class="st-detail__value">10:00am – 11:30am<br><span class="st-detail__note">Doors open from 9:50am</span></p>
+        </div>
+      </div>
+
+      <div class="st-detail">
+        <div class="st-detail__icon-wrap">
+          <lucide-icon name="phone" [size]="20" [strokeWidth]="1.6" class="st-detail__icon"></lucide-icon>
+        </div>
+        <div>
+          <p class="st-detail__label">Phone</p>
+          <p class="st-detail__value"><a href="tel:+61300000000">+61 3 0000 0000</a></p>
+        </div>
+      </div>
+
+      <div class="st-detail">
+        <div class="st-detail__icon-wrap">
+          <lucide-icon name="mail" [size]="20" [strokeWidth]="1.6" class="st-detail__icon"></lucide-icon>
+        </div>
+        <div>
+          <p class="st-detail__label">Email</p>
+          <p class="st-detail__value"><a href="mailto:hello@deepwaterschurch.com.au">hello&#64;deepwaterschurch.com.au</a></p>
+        </div>
+      </div>
+
+      <a
+        href="https://maps.google.com/?q=121+Orchard+Road+Doreen+VIC+3754"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="st-location__directions">
+        <lucide-icon name="map-pin" [size]="16" [strokeWidth]="2"></lucide-icon>
+        Get Directions
+      </a>
+    </div>
+
+    <div class="st-location__map" dwReveal [dwRevealDelay]="150">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3158.0!2d145.083!3d-37.623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad60ccca7e4b5e3%3A0x1!2s121+Orchard+Rd%2C+Doreen+VIC+3754!5e0!3m2!1sen!2sau!4v1"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Deep Waters Church location map">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- GETTING HERE -->
+<section class="st-getting">
+  <div class="st-getting__inner">
+    <div class="st-getting__header" dwReveal>
+      <dw-section-label text="Getting Here"></dw-section-label>
+      <h2 class="st-getting__heading">How to Find Us</h2>
+    </div>
+    <div class="st-getting__grid">
+      <div class="st-getting__item" dwReveal [dwRevealDelay]="0">
+        <div class="st-getting__icon-wrap">
+          <lucide-icon name="car" [size]="28" [strokeWidth]="1.4"></lucide-icon>
+        </div>
+        <h3>By Car</h3>
+        <p>We have <strong>free onsite parking</strong> right at the venue with plenty of spaces. Additional street parking is available on Orchard Road. Follow GPS to 121 Orchard Road, Doreen VIC 3754.</p>
+      </div>
+      <div class="st-getting__item" dwReveal [dwRevealDelay]="120">
+        <div class="st-getting__icon-wrap">
+          <lucide-icon name="map-pin" [size]="28" [strokeWidth]="1.4"></lucide-icon>
+        </div>
+        <h3>Public Transport</h3>
+        <p>Doreen is serviced by bus routes from South Morang and Mernda train stations. Check <a href="https://www.ptv.vic.gov.au" target="_blank" rel="noopener noreferrer">PTV</a> for current timetables. Feel free to contact us if you need a lift — we're happy to help.</p>
+      </div>
+      <div class="st-getting__item" dwReveal [dwRevealDelay]="240">
+        <div class="st-getting__icon-wrap">
+          <lucide-icon name="coffee" [size]="28" [strokeWidth]="1.4"></lucide-icon>
+        </div>
+        <h3>When You Arrive</h3>
+        <p>Doors open at <strong>9:50am</strong>. Our welcome team will be at the entrance to greet you and help with anything you need. Grab a coffee, find a seat, and make yourself at home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="st-cta">
+  <div class="st-cta__inner" dwReveal>
+    <div class="st-cta__text">
+      <h2>Ready to Join Us?</h2>
+      <p>We'd love to meet you this Sunday. Let us know you're coming and we'll make sure you're looked after.</p>
+    </div>
+    <div class="st-cta__actions">
+      <a routerLink="/plan-your-visit" class="st-btn st-btn--gold">Plan Your Visit</a>
+      <a routerLink="/contact" class="st-btn st-btn--outline">Contact Us</a>
+    </div>
+  </div>
+</section>

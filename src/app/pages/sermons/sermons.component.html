@@ -1,0 +1,165 @@
+<dw-page-hero
+  title="Sermons & Media"
+  subtitle="Watch, listen and grow — messages from Deep Waters Church"
+  label="Messages"
+  bgImage="assets/images/sermons-hero.jpg">
+</dw-page-hero>
+
+<!-- FEATURED SERMON -->
+<section class="sm-featured" *ngIf="featured">
+  <div class="sm-featured__inner">
+    <div class="sm-featured__image" dwReveal>
+      <img [src]="featured.thumbnailUrl || 'assets/images/sermon-featured.jpg'" [alt]="featured.title">
+      <a [href]="featured.youtubeUrl" target="_blank" rel="noopener noreferrer" class="sm-featured__play" aria-label="Watch sermon">
+        <lucide-icon name="play" [size]="28" [strokeWidth]="2"></lucide-icon>
+      </a>
+    </div>
+    <div class="sm-featured__text" dwReveal [dwRevealDelay]="150">
+      <dw-section-label text="Featured Message"></dw-section-label>
+      <h2 class="sm-featured__title">{{ featured.title }}</h2>
+      <p class="sm-featured__meta">
+        <span>{{ featured.speaker }}</span>
+        <span class="sm-featured__dot">·</span>
+        <span>{{ featured.sermonSeries }}</span>
+        <span class="sm-featured__dot">·</span>
+        <span>{{ featured.durationMinutes }} min</span>
+      </p>
+      <p class="sm-featured__desc">{{ featured.description }}</p>
+      <div class="sm-featured__actions">
+        <a [href]="featured.youtubeUrl" target="_blank" rel="noopener noreferrer" class="sm-btn sm-btn--gold">
+          <lucide-icon name="play" [size]="16" [strokeWidth]="2.5"></lucide-icon>
+          Watch Now
+        </a>
+        <a [href]="featured.youtubeUrl" target="_blank" rel="noopener noreferrer" class="sm-btn sm-btn--outline">
+          <lucide-icon name="headphones" [size]="16" [strokeWidth]="2"></lucide-icon>
+          Listen
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL SERMONS -->
+<section class="sm-all">
+  <div class="sm-all__inner">
+    <div class="sm-all__header" dwReveal>
+      <dw-section-label text="Recent Messages"></dw-section-label>
+      <h2 class="sm-all__heading">All Sermons</h2>
+    </div>
+
+    <!-- Series filter -->
+    <div class="sm-filters" dwReveal [dwRevealDelay]="80">
+      <button
+        class="sm-filter"
+        [class.sm-filter--active]="activeSeries === null"
+        (click)="filterBySeries(null)">All</button>
+      <button
+        class="sm-filter"
+        *ngFor="let s of seriesList"
+        [class.sm-filter--active]="activeSeries === s"
+        (click)="filterBySeries(s)">{{ s }}</button>
+    </div>
+
+    <div class="sm-grid">
+      <div class="sm-card" *ngFor="let sermon of filteredSermons; let i = index" dwReveal [dwRevealDelay]="(i % 3) * 80">
+        <div class="sm-card__thumb">
+          <img [src]="sermon.thumbnailUrl || 'assets/images/sermon-featured.jpg'" [alt]="sermon.title">
+          <a [href]="sermon.youtubeUrl" target="_blank" rel="noopener noreferrer" class="sm-card__play" aria-label="Watch">
+            <lucide-icon name="play" [size]="20" [strokeWidth]="2.5"></lucide-icon>
+          </a>
+        </div>
+        <div class="sm-card__body">
+          <span class="sm-card__series">{{ sermon.sermonSeries }}</span>
+          <h3 class="sm-card__title">{{ sermon.title }}</h3>
+          <p class="sm-card__speaker">{{ sermon.speaker }}</p>
+          <p class="sm-card__desc">{{ sermon.description }}</p>
+          <div class="sm-card__foot">
+            <span class="sm-card__dur">
+              <lucide-icon name="clock" [size]="12" [strokeWidth]="2"></lucide-icon>
+              {{ sermon.durationMinutes }} min
+            </span>
+            <a [href]="sermon.youtubeUrl" target="_blank" rel="noopener noreferrer" class="sm-card__watch">
+              Watch
+              <lucide-icon name="external-link" [size]="12" [strokeWidth]="2"></lucide-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WATCH ONLINE / YOUTUBE -->
+<section class="sm-youtube">
+  <div class="sm-youtube__inner">
+    <div class="sm-youtube__text" dwReveal>
+      <dw-section-label text="Online" [light]="true"></dw-section-label>
+      <h2>Watch on YouTube</h2>
+      <p>Can't make it on Sunday? Every service is streamed and uploaded to our YouTube channel so you can watch from anywhere, at any time. Subscribe so you never miss a message.</p>
+      <div class="sm-youtube__actions">
+        <a href="https://www.youtube.com/@DeepWatersChurch" target="_blank" rel="noopener noreferrer" class="sm-btn sm-btn--gold">
+          <lucide-icon name="youtube" [size]="18" [strokeWidth]="2"></lucide-icon>
+          Subscribe on YouTube
+        </a>
+      </div>
+    </div>
+    <div class="sm-youtube__embed" dwReveal [dwRevealDelay]="150">
+      <div class="sm-youtube__frame-wrap">
+        <iframe
+          src="https://www.youtube.com/embed?listType=user_uploads&list=DeepWatersChurch"
+          title="Deep Waters Church YouTube"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIO MESSAGES -->
+<section class="sm-audio">
+  <div class="sm-audio__inner">
+    <div class="sm-audio__header" dwReveal>
+      <dw-section-label text="Audio Messages"></dw-section-label>
+      <h2 class="sm-audio__heading">Listen on the Go</h2>
+      <p class="sm-audio__sub">Prefer to listen? Our sermons are available as audio messages — great for your commute, morning walk or quiet time.</p>
+    </div>
+    <div class="sm-audio__list">
+      <div class="sm-audio__item" *ngFor="let sermon of sermons; let i = index" dwReveal [dwRevealDelay]="i * 60">
+        <div class="sm-audio__num">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="sm-audio__info">
+          <h4 class="sm-audio__title">{{ sermon.title }}</h4>
+          <p class="sm-audio__meta">{{ sermon.speaker }} · {{ sermon.sermonSeries }} · {{ sermon.durationMinutes }} min</p>
+        </div>
+        <a [href]="sermon.youtubeUrl" target="_blank" rel="noopener noreferrer" class="sm-audio__play" aria-label="Listen">
+          <lucide-icon name="volume-2" [size]="18" [strokeWidth]="2"></lucide-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BIBLE STUDY RESOURCES -->
+<section class="sm-resources">
+  <div class="sm-resources__inner" dwReveal>
+    <dw-section-label text="Go Deeper"></dw-section-label>
+    <h2 class="sm-resources__heading">Bible Study Resources</h2>
+    <p class="sm-resources__sub">Resources to help you dig deeper into the Word throughout the week.</p>
+    <div class="sm-resources__grid">
+      <div class="sm-resource" *ngFor="let r of resources" dwReveal [dwRevealDelay]="r.delay">
+        <div class="sm-resource__icon-wrap">
+          <lucide-icon [name]="r.icon" [size]="28" [strokeWidth]="1.5" class="sm-resource__icon"></lucide-icon>
+        </div>
+        <div class="sm-resource__body">
+          <h4 class="sm-resource__title">{{ r.title }}</h4>
+          <p class="sm-resource__desc">{{ r.desc }}</p>
+        </div>
+        <a [href]="r.href" target="_blank" rel="noopener noreferrer" class="sm-resource__link">
+          {{ r.cta }}
+          <lucide-icon name="external-link" [size]="12" [strokeWidth]="2"></lucide-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

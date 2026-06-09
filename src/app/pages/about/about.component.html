@@ -1,0 +1,118 @@
+<dw-page-hero
+  title="About Us"
+  subtitle="A Spirit-filled church family in the heart of Doreen"
+  label="Our Story"
+  bgImage="assets/images/about-story.jpg">
+</dw-page-hero>
+
+<!-- OUR STORY -->
+<section class="about-story">
+  <div class="about-story__inner">
+    <div class="about-story__image" dwReveal>
+      <img src="assets/images/about-story.jpg" alt="Deep Waters Church community gathering">
+    </div>
+    <div class="about-story__text" dwReveal [dwRevealDelay]="150">
+      <dw-section-label text="Our Story"></dw-section-label>
+      <h2 class="about-story__heading">How Deep Waters Began</h2>
+      <p>Deep Waters Church was founded on a simple conviction — that people in Doreen and the surrounding communities deserve a church that is genuinely warm, biblically grounded, and Spirit-led.</p>
+      <p>We started as a small gathering of families with a shared desire to see God move in our neighbourhood. From those humble beginnings, God has been faithful to grow us into a diverse, multigenerational community united around Jesus Christ.</p>
+      <p>The name <em>Deep Waters</em> comes from Proverbs 20:5 — <em>"The purposes of a person's heart are deep waters."</em> We believe every person carries God-given potential waiting to be drawn out through community, discipleship, and encounter with Jesus.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OUR VISION -->
+<section class="about-vision">
+  <div class="about-vision__overlay"></div>
+  <div class="about-vision__content" dwReveal>
+    <dw-section-label text="Our Vision" [light]="true"></dw-section-label>
+    <h2 class="about-vision__heading">To Know Jesus.<br>To Make Him Known.</h2>
+    <p class="about-vision__body">We exist to help people encounter Jesus, grow in authentic faith, and discover the life-giving hope found in God's Word — and to take that hope into every corner of our community.</p>
+    <div class="about-vision__pillars">
+      <div class="about-vision__pillar" *ngFor="let p of visionPillars">
+        <lucide-icon [name]="p.icon" [size]="28" [strokeWidth]="1.5" class="about-vision__pillar-icon"></lucide-icon>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.desc }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE BELIEVE -->
+<section class="about-beliefs">
+  <div class="about-beliefs__inner">
+    <div class="about-beliefs__header" dwReveal>
+      <dw-section-label text="What We Believe"></dw-section-label>
+      <h2 class="about-beliefs__heading">Our Core Beliefs</h2>
+      <p class="about-beliefs__sub">We hold to the historic Christian faith as revealed in the Holy Scriptures.</p>
+    </div>
+    <div class="about-beliefs__grid">
+      <div class="about-beliefs__card" *ngFor="let b of beliefs; let i = index" dwReveal [dwRevealDelay]="i * 80">
+        <lucide-icon [name]="b.icon" [size]="26" [strokeWidth]="1.5" class="about-beliefs__card-icon"></lucide-icon>
+        <h3 class="about-beliefs__card-title">{{ b.title }}</h3>
+        <p class="about-beliefs__card-body">{{ b.body }}</p>
+        <span class="about-beliefs__card-ref">{{ b.ref }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR VALUES -->
+<section class="about-values">
+  <div class="about-values__inner">
+    <div class="about-values__header" dwReveal>
+      <dw-section-label text="Our Values"></dw-section-label>
+      <h2 class="about-values__heading">What Shapes How We Do Church</h2>
+    </div>
+    <div class="about-values__grid">
+      <div class="about-values__card" *ngFor="let v of values; let i = index" dwReveal [dwRevealDelay]="i * 100">
+        <div class="about-values__card-num">{{ i + 1 | number:'2.0' }}</div>
+        <lucide-icon [name]="v.icon" [size]="32" [strokeWidth]="1.4" class="about-values__card-icon"></lucide-icon>
+        <h3 class="about-values__card-title">{{ v.title }}</h3>
+        <p class="about-values__card-body">{{ v.body }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP TEAM -->
+<section class="about-team">
+  <div class="about-team__inner">
+    <div class="about-team__header" dwReveal>
+      <dw-section-label text="Our Leadership"></dw-section-label>
+      <h2 class="about-team__heading">Meet the Team</h2>
+      <p class="about-team__sub">Servant leaders committed to the church and the community.</p>
+    </div>
+    <div class="about-team__grid">
+      <div class="about-team__card" *ngFor="let m of team; let i = index" dwReveal [dwRevealDelay]="i * 120">
+        <div class="about-team__photo-wrap">
+          <img [src]="m.photo" [alt]="m.name" class="about-team__photo">
+        </div>
+        <div class="about-team__info">
+          <h3 class="about-team__name">{{ m.name }}</h3>
+          <p class="about-team__role">{{ m.role }}</p>
+          <p class="about-team__bio">{{ m.bio }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FULL GOSPEL AFFILIATION -->
+<section class="about-affiliation">
+  <div class="about-affiliation__inner" dwReveal>
+    <div class="about-affiliation__logo-wrap">
+      <img src="assets/images/augospel.png" alt="Australian Full Gospel Churches" class="about-affiliation__logo">
+    </div>
+    <div class="about-affiliation__text">
+      <dw-section-label text="Affiliation"></dw-section-label>
+      <h2 class="about-affiliation__heading">Part of a Larger Family</h2>
+      <p>Deep Waters Church is proudly affiliated with <strong>Australian Full Gospel Churches</strong> — a movement of Spirit-filled, Christ-centred churches committed to building healthy congregations and reaching Australia with the Gospel.</p>
+      <p>This affiliation gives us accountability, resources, training, and connection to a wider network of churches who share our values and mission.</p>
+      <a href="https://afgc.org.au" target="_blank" rel="noopener noreferrer" class="about-affiliation__link">
+        Learn about AFGC
+        <lucide-icon name="arrow-right" [size]="16"></lucide-icon>
+      </a>
+    </div>
+  </div>
+</section>
